@@ -1,0 +1,59 @@
+{
+  "name": "bilibili",
+  "description": "bilibili",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node build/dev-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gemicat/bilibili.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gemicat/bilibili/issues"
+  },
+  "homepage": "https://github.com/Gemicat/bilibili#readme",
+  "dependencies": {
+    "css-loader": "^0.28.1",
+    "vue": "2.3.3",
+    "vue-lazyload": "1.0.3",
+    "vue-router": "2.5.3",
+    "vuex": "2.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-istanbul": "^4.1.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chalk": "^1.1.3",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.15.3",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.28.0",
+    "http-proxy-middleware": "^0.17.4",
+    "json-loader": "^0.5.4",
+    "opn": "^5.0.0",
+    "semver": "^5.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^12.1.0",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "1.10.2",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}

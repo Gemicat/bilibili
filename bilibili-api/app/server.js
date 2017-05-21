@@ -10,7 +10,10 @@ import logger from 'koa-logger'; // 打印日志
 
 import path from 'path';
 
+// 配置文件
 import config from '../config/config';
+// 导入路由
+import routes from './routes'
 
 const app = new Koa();
 
@@ -28,6 +31,9 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start;
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 })
+
+// routes
+app.use(routes.routes(), routes.allowedMethods());
 
 app.on('error', (error, ctx) => {
   console.log('2333！出错啦' + JSON.stringify(ctx.onerror));
