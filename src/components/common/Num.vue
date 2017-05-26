@@ -2,17 +2,20 @@
   <div class="num">
     <div class="menu-wrapper">
       <Search></Search>
+      <NavMenu></NavMenu>
     </div>
   </div>
 </template>
 
 <script>
 import Search from './Search.vue';
+import NavMenu from './NavMenu.vue';
 
 export default {
   
   components: {
-    Search
+    Search,
+    NavMenu
   }
 }
 </script>
