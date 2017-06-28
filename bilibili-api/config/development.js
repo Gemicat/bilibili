@@ -1,4 +1,4 @@
-const port = process.env.port || '9090';
+const port = process.env.port || '9529';
 
 export default {
   registerUrl: 'http://121.43.108.15:9000/User/RegNewUser',

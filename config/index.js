@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: 9528,
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
