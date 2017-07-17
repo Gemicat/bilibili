@@ -3,7 +3,7 @@
     <div class="container-top-wrapper">
       <div class="container-top">
         <div class="b-l">
-
+          <Banner></Banner>
         </div>
       </div>
     </div>

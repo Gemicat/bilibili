@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Gemicat/bilibili#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "css-loader": "^0.28.1",
     "file-loader": "^0.11.1",
     "vue": "2.3.3",
