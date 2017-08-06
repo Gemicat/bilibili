@@ -1,9 +1,23 @@
 <template>
-  <div class="banner">
+  <div class="banner" @mouseover="show=true" @mouseout="show=false">
     <div class="topic-preview-wrapper">
       <div class="topic-preview-list-wrapper">
         <ul class="topic-preview" style="width: 500%;" ref="banner">
-          <BannerItem></BannerItem>
+          <BannerItem v-for="item in bannerlist" :banner="item"></BannerItem>
+        </ul>
+      </div>
+      <a class="more-topic" href="/topic/integrated-1.html" target="_blank" v-show="show">更多
+        <i class="b-icon"></i>
+      </a>
+      <div class="s-bottom">
+        <div class="title" v-if="bannerlist[count]">
+          <span class="">
+            <img src="//static.hdslb.com/images/base/ad.png" style="width: 32px; height: 20px: margin-left: 5px;vertical-align: middle;" v-if="bannerlist[count].is_ad">
+            <a :href="bannerlist[count].url" target="_blank">{{ bannerlist[count].name }}</a>
+          </span>
+        </div>
+        <ul class="slide-bar">
+          <li :class="{on: count === index}" v-for="(item, index) in bannerlist" @click="cutItem(index)"></li>
         </ul>
       </div>
     </div>
@@ -16,13 +30,46 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      
+      show: false,
+      count: 0,
+      interval: Function
     }
   },
   computed: {
     ...mapGetters([
+      'requesting',
+      'error',
       'bannerlist'
     ])
+  },
+  mounted() {
+    this.startInterval();
+    this.$store.dispatch('bannerlist')
+  },
+  methods: {
+    cutItem(index) {
+      this.count = index;
+      let distance = -100 * this.count;
+      let left = distance + '%';
+      this.$refs.banner.style.marginLeft = left;
+
+      clearInterval(this.interval);
+      this.startInterval();
+    },
+    startInterval() {
+      // 轮播图自动滚动
+      this.interval = setInterval(() => {
+        this.count++;
+        if (this.count === 5) {
+          this.count = 0;
+        }
+        let distance = -100 * this.count;
+        let left = distance + '%';
+        if (this.$refs.banner) {
+          this.$refs.banner.style.marginLeft = left;
+        }
+      }, 5000)
+    }
   },
   components: {
     BannerItem

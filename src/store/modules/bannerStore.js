@@ -2,11 +2,11 @@ import {bannerApi} from 'api';
 import * as TYPE from '../actionType/bannerType'
 
 const state = {
-  bannerList: []
+  bannerlist: []
 }
 
 const getters = {
-  bannerlist: state=> state.bannerList
+  bannerlist: state=> state.bannerlist
 }
 
 const actions = {
